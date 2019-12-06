@@ -78,7 +78,7 @@ app.post("/register", async (req, res) => {
   try {
         await myProfile.save();
         const items = await Profile.find();
-        res.send('Thank you for registering with us /n ');
+        res.send('Thank you for registering with us');
         // res.render("login", { users: items });
       } catch (error) {
     res.status(400).send(error);
