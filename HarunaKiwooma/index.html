@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Profile Me</title>
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <style>
+        body {
+            color: #542a52;
+            width: 80%;
+
+        }
+
+        .container {
+            width: 70% !important;
+        }
+    </style>
+</head>
+
+<body onload="document.registration.surname.focus();">
+    <div class="container" style="margin-top:10% ;">
+    <div style="background: #542a52; color: #fff;">
+        <h1>Students Details Entry Form</h1>
+    </div>
+    <div>
+        <p>
+            Not all field marked with a red star are
+            (<span style="color: #C00000;">*</span>) are required
+        </p>
+    </div>
+    <div>
+        <form action="/register" method="post" id="form" name="registration" onSubmit="return formValidation();">
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <div>
+                        Sur name <span style="color: #C00000;">*</span>
+                    </div>
+                    <div>
+                        <input class="form-control" type="text" name="surname" id=""
+                            placeholder="Enter your Sur name here">
+                    </div>
+                    <p id="log1" style="color: #C00000;"></p>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        Given name <span style="color: #C00000;">*</span>
+                    </div>
+                    <div>
+
+                        <input class="form-control" type="text" name="givenname" id=""
+                            placeholder="Enter your given name here">
+                    </div>
+                    <p id="log2" style="color: #C00000;"></p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-md-12">
+                    Gender <span style="color: #C00000;">*</span>
+                    <div class="form-control">
+                        <label for="" class="radio">
+                            <input type="radio" name="gender" id="">
+                            Male
+                        </label>
+                        <label for="" class="radio">
+                            <input type="radio" name="gender" id="">
+                            Female
+                        </label>
+                    </div>
+                </label>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <div>
+                        Date of Birth <span style="color: #C00000;">*</span>
+                    </div>
+                    <div>
+
+                        <input class="form-control" type="date" name="dob" id="">
+                    </div>
+                    <p id="log3" style="color: #C00000;"></p>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        Country <span style="color: #C00000;">*</span>
+                    </div>
+                    <div>
+                        <select name="country" id="month" class="form-control">
+                            <option value="">----Select country---</option>
+                            <option value="uganda">uganda</option>
+                            <option value="kenya">kenya</option>
+                            <option value="rwanda">rwanda</option>
+                        </select>
+                    </div>
+                    <p id="log4" style="color: #C00000;"></p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <div>
+                        Place of Residence <span style="color: #C00000;">*</span>
+                    </div>
+                    <div>
+                        <input class="form-control" type="text" name="residence" id=""
+                            placeholder="Enter Place of Residence">
+                    </div>
+                    <p id="log5" style="color: #C00000;"></p>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        Phone number <span style="color: #C00000;">*</span>
+                    </div>
+                    <div>
+                        <input class="form-control" type="text" name="phone" id=""
+                            placeholder="Eg. 07XXXXXXXXXXXX or">
+                    </div>
+                    <p id="log6" style="color: #C00000;"></p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-md-12">
+                    EmailAddress <span style="color: #C00000;">*</span>
+                    <div>
+                        <input class="form-control" type="email" name="email" id=""
+                            placeholder="Eg. application@gmail.com">
+                    </div>
+                </label>
+                <p id="log7" style="color: #C00000;"></p>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <div>
+                        <p>
+                            Skills
+                            <span style="color: #BABDB6; font-size: 12px;">(seperate skills with commas)</span>
+                            <span style="color: #C00000;">*</span>
+                        </p>
+                    </div>
+                    <div><textarea class="form-control" name="skills" id="" cols="35" rows="8"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <p>
+                            Projects
+                            <span style="color: #BABDB6; font-size: 12px;"> (seperate projects with commas)</span>
+                            <span style="color: #C00000;">*</span>
+                        </p>
+                    </div>
+                    <div>
+                        <textarea class="form-control" name="projects" id="" cols="35" rows="8"></textarea>
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <p class="col-md-6"></p>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <p class="col-md-1"></p>
+                        <div class="col-md-5">
+                            <button type="submit" class="btn btn-lg" style=" background: #542a52; color: #fff;">
+                             Submit
+                            </button>
+                        </div>
+                        <p class="col-md-1"></p>
+                        <div class="col-md-5">
+                            <button type="reset"class="btn btn-lg" 
+                            style=" background: #fff; color: #542a52; border: #542a52 solid 1px ; ">
+                            Cancel
+                        </button>
+                        </div>
+
+                    </div>
+                </div>
+
+    </div>
+    <p id="log"></p>
+    </form>
+    </div>
+    </div>
+    <script src="./registration.js"></script>
+</body>
+</html>
