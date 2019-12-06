@@ -1,0 +1,126 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Profile Me
+  link(rel='stylesheet' href='/css/bootstrap.min.css')
+  script(src = "/javascripts/registration.js")
+  style.
+    body {
+    color: #542a52;
+    width: 80%;
+    }
+    .container {
+    width: 70% !important;
+    }
+.container(style='margin-top:10% ;')
+  div(style='background: #542a52; color: #fff;')
+    h1 Students Details Entry Form
+  div
+    p
+      | Not all field marked with a red star are
+      | (
+      span(style='color: #C00000;') *
+      | ) are required
+  div
+    form#form(action='/register' method='post' name='registration' onsubmit='return formValidation();')
+      .form-group.row
+        .col-md-6
+          div
+            | Sur name 
+            span(style='color: #C00000;') *
+          div
+            input.form-control(type='text' name='surname' id='' placeholder='Enter your Sur name here')
+          p#log1(style='color: #C00000;')
+        .col-md-6
+          div
+            | Given name 
+            span(style='color: #C00000;') *
+          div
+            input.form-control(type='text' name='givenname' id='' placeholder='Enter your given name here')
+          p#log2(style='color: #C00000;')
+      .form-group.row
+        label.col-md-12(for='')
+          | Gender 
+          span(style='color: #C00000;') *
+          .form-control
+            label.radio(for='')
+              input(type='radio' name='gender' id='')
+              |                                 Male
+            label.radio(for='')
+              input(type='radio' name='gender' id='')
+              |                                 Female
+      .form-group.row
+        .col-md-6
+          div
+            | Date of Birth 
+            span(style='color: #C00000;') *
+          div
+            input.form-control(type='date' name='dob' id='')
+          p#log3(style='color: #C00000;')
+        .col-md-6
+          div
+            | Country 
+            span(style='color: #C00000;') *
+          div
+            select#month.form-control(name='country')
+              option(value='') ----Select country---
+              option(value='uganda') uganda
+              option(value='kenya') kenya
+              option(value='rwanda') rwanda
+          p#log4(style='color: #C00000;')
+      .form-group.row
+        .col-md-6
+          div
+            | Place of Residence 
+            span(style='color: #C00000;') *
+          div
+            input.form-control(type='text' name='residence' id='' placeholder='Enter Place of Residence')
+          p#log5(style='color: #C00000;')
+        .col-md-6
+          div
+            | Phone number 
+            span(style='color: #C00000;') *
+          div
+            input.form-control(type='text' name='phone' id='' placeholder='Eg. 07XXXXXXXXXXXX or')
+          p#log6(style='color: #C00000;')
+      .form-group.row
+        label.col-md-12(for='')
+          | EmailAddress 
+          span(style='color: #C00000;') *
+          div
+            input.form-control(type='email' name='email' id='' placeholder='Eg. application@gmail.com')
+        p#log7(style='color: #C00000;')
+      .form-group.row
+        .col-md-6
+          div
+            p
+              | Skills
+              span(style='color: #BABDB6; font-size: 12px;') (seperate skills with commas)
+              span(style='color: #C00000;') *
+          div
+            textarea.form-control(name='skills' id='' cols='35' rows='8')
+        .col-md-6
+          div
+            p
+              | Projects
+              span(style='color: #BABDB6; font-size: 12px;')  (seperate projects with commas)
+              span(style='color: #C00000;') *
+          div
+            textarea.form-control(name='projects' id='' cols='35' rows='8')
+      .form-group.row
+        p.col-md-6
+        .col-md-6
+          .form-group.row
+            p.col-md-1
+            .col-md-5
+              button.btn.btn-lg(type='submit' style=' background: #542a52; color: #fff;')
+                | Submit
+            p.col-md-1
+            .col-md-5
+              button.btn.btn-lg(type='reset' style=' background: #fff; color: #542a52; border: #542a52 solid 1px ; ')
+                | Cancel
+      p#log
+
+
